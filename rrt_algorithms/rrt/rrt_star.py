@@ -5,6 +5,7 @@ from operator import itemgetter
 from rrt_algorithms.rrt.heuristics import cost_to_go
 from rrt_algorithms.rrt.heuristics import segment_cost, path_cost
 from rrt_algorithms.rrt.rrt import RRT
+import time
 
 
 class RRTStar(RRT):
@@ -56,6 +57,7 @@ class RRTStar(RRT):
                 self.trees[tree].E, self.x_init, x_new) + segment_cost(x_new, x_near)
             if tent_cost < curr_cost and self.X.collision_free(x_near, x_new, self.r):
                 self.trees[tree].E[x_near] = x_new
+
 
     def connect_shortest_valid(self, tree, x_new, L_near):
         """

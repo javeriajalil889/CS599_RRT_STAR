@@ -74,9 +74,10 @@ def test_get_nearby_vertices():
     avg_time = sum(times) / len(times)
     min_time = min(times)
     max_time = max(times)
+  
 
     print(f"get_nearby_vertices() - 1000 runs:")
-    print(f"  Avg Time   : {avg_time:.8f} seconds")
+    print(f"  Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
@@ -128,7 +129,7 @@ def test_rewire():
     max_time = max(times)
 
     print(f"rewire() - 1000 runs:")
-    print(f"  Avg Time   : {avg_time:.8f} seconds")
+    print(f"  Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
@@ -171,7 +172,7 @@ def test_connect_shortest_valid():
     max_time = max(times)
 
     print(f"connect_shortest_valid() - 1000 runs:")
-    print(f"  Avg Time   : {avg_time:.8f} seconds")
+    print(f" Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
@@ -211,8 +212,9 @@ def test_current_rewire_count():
     min_time = min(times)
     max_time = max(times)
 
+
     print(f"current_rewire_count() - 1000 runs:")
-    print(f"  Avg Time   : {avg_time:.8f} seconds")
+    print(f" Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
@@ -255,7 +257,7 @@ def test_rrt_star():
     max_time = max(times)
 
     print(f"\nRRTStar - 1000 runs:")
-    print(f"  Avg Time   : {avg_time:.8f} seconds")
+    print(f" Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
     plot_graph(times, "RRTStar Instantiation Performance (1000 iterations)")

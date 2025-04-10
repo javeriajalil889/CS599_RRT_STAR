@@ -35,3 +35,41 @@ plot.plot_obstacles(X, Obstacles)
 plot.plot_start(X, x_init)
 plot.plot_goal(X, x_goal)
 plot.draw(auto_open=True)
+
+
+
+
+# connect_shortest_valid(self, tree, x_new, L_near):
+        """
+        Connect to nearest vertex that has an unobstructed path
+        :param tree: int, tree being added to
+        :param x_new: tuple, vertex being added
+        :param L_near: list of nearby vertices
+        """
+
+def test_connect_shortest_valid():
+    X_dimensions = np.array([(0, 100), (0, 100)])  
+    Obstacles = np.array([(20, 20, 40, 40), (20, 60, 40, 80),
+                     (60, 20, 80, 40), (60, 60, 80, 80)])
+    x_init = (0, 0)  
+    x_goal = (100, 100) 
+
+    q = 8  
+    r = 1  
+    max_samples = 1024  
+    rewire_count = 32  
+    prc = 0.1  
+
+    X = SearchSpace(X_dimensions, Obstacles)
+    rrt_star = RRTStar(X, q, x_init, x_goal, max_samples, r, prc, rewire_count)
+
+    tree=0
+    x_new=(50,50)
+    L_near=[(1, (30,30)), (2, (40,40)), (3, (45,45))] 
+
+    times=[]
+    for _ in range(1000):
+        start=time.perf_counter()
+        rrt_star.connect_shortest_valid(tree,x_new, L_near)
+        times.append(time.perf_counter()-start)
+    plot_graph(times, "connect_shortest_valid()")

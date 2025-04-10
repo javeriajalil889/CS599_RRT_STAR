@@ -54,15 +54,21 @@ class RRTBase(object):
         """
         self.trees[tree].E[child] = parent
 
+    # def nearby(self, tree, x, n):
+    #     """
+    #     Return nearby vertices
+    #     :param tree: int, tree being searched
+    #     :param x: tuple, vertex around which searching
+    #     :param n: int, max number of neighbors to return
+    #     :return: list of nearby vertices
+    #     """
+    #     return self.trees[tree].V.nearest(x, num_results=n, objects="raw")
+
     def nearby(self, tree, x, n):
-        """
-        Return nearby vertices
-        :param tree: int, tree being searched
-        :param x: tuple, vertex around which searching
-        :param n: int, max number of neighbors to return
-        :return: list of nearby vertices
-        """
-        return self.trees[tree].V.nearest(x, num_results=n, objects="raw")
+        distances, indexes = self.trees[tree].V.query(x, k=n)
+        points = [tuple(self.trees[tree].V.data[i]) for i in np.atleast_1d(indexes)]
+        return points
+
 
     def get_nearest(self, tree, x):
         """

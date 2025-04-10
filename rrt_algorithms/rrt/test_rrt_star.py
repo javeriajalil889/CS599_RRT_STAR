@@ -23,7 +23,7 @@ def plot_graph(times, title):
     plt.yscale('log')
     plt.xlabel("Iteration")
     plt.ylabel("Time (seconds, log scale)")
-    plt.title(f"Performance Profiling: {title} Over 1000 Iterations")
+    plt.title(f"Performance Profiling for : {title} (1000 Iterations)")
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
@@ -81,7 +81,7 @@ def test_get_nearby_vertices():
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
-    plot_graph(times, "get_nearby_vertices() Performance (1000 iterations)")
+    plot_graph(times, "get_nearby_vertices()")
 
 
 
@@ -133,7 +133,7 @@ def test_rewire():
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
-    plot_graph(times, "rewire() Performance (1000 iterations)")
+    plot_graph(times, "rewire()")
 
 
 
@@ -171,13 +171,13 @@ def test_connect_shortest_valid():
     min_time = min(times)
     max_time = max(times)
 
-    print(f"connect_shortest_valid() - 1000 runs:")
+    print(f"connect_shortest_valid()")
     print(f" Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
 
-    plot_graph(times, "connect_shortest_valid() Performance (1000 iterations)")
+    plot_graph(times, "connect_shortest_valid() ")
 
 
 
@@ -218,7 +218,7 @@ def test_current_rewire_count():
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
 
-    plot_graph(times, "current_rewire_count() Performance (1000 iterations)")
+    plot_graph(times, "current_rewire_count()  ")
 
      
 def test_rrt_star():
@@ -260,7 +260,7 @@ def test_rrt_star():
     print(f" Mean/Avg Time   : {avg_time:.8f} seconds")
     print(f"  Min Time   : {min_time:.8f} seconds")
     print(f"  Max Time   : {max_time:.8f} seconds")
-    plot_graph(times, "RRTStar Instantiation Performance (1000 iterations)")
+    plot_graph(times, "RRTStar Performance ")
 
 
 

@@ -23,7 +23,7 @@ def plot_graph(times, title):
     plt.yscale('log')
     plt.xlabel("Iteration")
     plt.ylabel("Time (seconds, log scale)")
-    plt.title(f"Performance Profiling for : {title} (1000 Iterations)")
+    plt.title(f"Performance Profiling for :{title} (1000 Iterations)")
     plt.legend()
     plt.grid(True)
     plt.tight_layout()

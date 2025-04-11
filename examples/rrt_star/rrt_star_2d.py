@@ -40,12 +40,12 @@ plot.draw(auto_open=True)
 
 
 # connect_shortest_valid(self, tree, x_new, L_near):
-        """
+ """
         Connect to nearest vertex that has an unobstructed path
         :param tree: int, tree being added to
         :param x_new: tuple, vertex being added
         :param L_near: list of nearby vertices
-        """
+ """
 
 def test_connect_shortest_valid():
     X_dimensions = np.array([(0, 100), (0, 100)])  
